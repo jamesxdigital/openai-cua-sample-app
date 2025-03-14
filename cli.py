@@ -6,6 +6,7 @@ from computers import (
     ScrapybaraUbuntu,
     LocalPlaywrightComputer,
     DockerComputer,
+    MacComputer,
 )
 
 
@@ -28,6 +29,7 @@ def main():
             "browserbase",
             "scrapybara-browser",
             "scrapybara-ubuntu",
+            "mac",
         ],
         help="Choose the computer environment to use.",
         default="local-playwright",
@@ -62,6 +64,7 @@ def main():
         "browserbase": BrowserbaseBrowser,
         "scrapybara-browser": ScrapybaraBrowser,
         "scrapybara-ubuntu": ScrapybaraUbuntu,
+        "mac": MacComputer,
     }
 
     ComputerClass = computer_mapping[args.computer]
